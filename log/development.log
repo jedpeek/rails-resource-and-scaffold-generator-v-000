@@ -144,3 +144,34 @@ Processing by ArticlesController#show as HTML
   [1m[35mArticle Load (0.5ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
   Rendered articles/show.html.erb within layouts/application (1.1ms)
 Completed 200 OK in 44ms (Views: 21.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/1/edit" for 4.30.5.194 at 2018-08-16 22:20:18 +0000
+Cannot render console from 4.30.5.194! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered articles/_form.html.erb (3.5ms)
+  Rendered articles/edit.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/articles/1" for 4.30.5.194 at 2018-08-16 22:20:27 +0000
+Cannot render console from 4.30.5.194! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GDiWZOSWjuXVWgH3Xs4Q36SK/EQXLNxjiOb9yrFQYtzEM05KhPrqhobSDw28TrtZbUtea2GoIjY/5JQgq1v4gw==", "article"=>{"title"=>"Thanks Scaffold", "body"=>"Built with Scaffold and Edited with Scaffold"}, "commit"=>"Update Article", "id"=>"1"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  UPDATE "articles" SET "body" = ?, "updated_at" = ? WHERE "articles"."id" = ?  [["body", "Built with Scaffold and Edited with Scaffold"], ["updated_at", "2018-08-16 22:20:27.594105"], ["id", 1]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://165.227.16.205:37201/articles/1
+Completed 302 Found in 10ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/articles/1" for 4.30.5.194 at 2018-08-16 22:20:27 +0000
+Cannot render console from 4.30.5.194! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered articles/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 39ms (Views: 37.4ms | ActiveRecord: 0.1ms)
